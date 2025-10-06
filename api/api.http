@@ -1,0 +1,51 @@
+@api_HostAddress = https://localhost:7039
+@api_BaseUrl = {{api_HostAddress}}/api/todo
+
+### Get all TODO items
+GET {{api_BaseUrl}}
+Accept: application/json
+
+###
+
+### Get TODO by ID
+GET {{api_BaseUrl}}/{{todoId}}
+Accept: application/json
+
+###
+
+### Create a new TODO
+POST {{api_BaseUrl}}
+Content-Type: application/json
+
+{
+  "title": "Buy groceries",
+  "isCompleted": false
+}
+
+###
+
+### Update a TODO
+PUT {{api_BaseUrl}}/{{todoId}}
+Content-Type: application/json
+
+{
+  "title": "Buy groceries and cook dinner",
+  "isCompleted": false
+}
+
+###
+
+### Toggle TODO completion
+PUT {{api_BaseUrl}}/{{todoId}}
+Content-Type: application/json
+
+{
+  "isCompleted": true
+}
+
+###
+
+### Delete a TODO
+DELETE {{api_BaseUrl}}/{{todoId}}
+
+###

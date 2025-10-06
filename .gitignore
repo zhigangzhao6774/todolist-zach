@@ -1,0 +1,41 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+*.dll
+*.exe
+*.pdb
+.vs/
+.vscode/
+*.DotSettings.user
+
+# Angular
+todo-angular/node_modules/
+todo-angular/dist/
+todo-angular/.angular/
+todo-angular/.vscode/
+todo-angular/coverage/
+*.log
+npm-debug.log*
+
+# IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+
+# Build Results
+publish/
+out/
