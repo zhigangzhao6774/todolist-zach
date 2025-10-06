@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers;
 
 /// <summary>
-/// Controller for managing TODO items
+/// Controller for managing TODO items , with CRUD operations and logging
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
