@@ -11,6 +11,10 @@ obj/
 .vs/
 .vscode/
 *.DotSettings.user
+# ignore test folders api.Tests folder
+api.Tests/
+
+ 
 
 # Angular
 todo-angular/node_modules/
