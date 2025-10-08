@@ -1,0 +1,185 @@
+<div class="todo-container">
+    <header class="todo-header">
+        <h1>📝 My TODO List</h1>
+        <p class="subtitle">Stay organized and productive--Zach</p>
+    </header>
+
+    <!-- Error message -->
+    @if (errorMessage()) {
+    <div class="error-message">
+        <span>⚠️ {{ errorMessage() }}</span>
+        <button (click)="errorMessage.set('')" class="close-btn">×</button>
+    </div>
+    }
+
+    <!-- Add new TODO form -->
+    <div class="add-todo-section">
+        <div class="input-group">
+            <input type="text" [(ngModel)]="newTodoTitle" (keyup.enter)="addTodo()" placeholder="What needs to be done?"
+                class="todo-input" [disabled]="isLoading()" />
+            <button (click)="addTodo()" class="add-btn" [disabled]="!newTodoTitle().trim() || isLoading()">
+                <span>+ Add</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-item">
+            <span class="stat-label">Total:</span>
+            <span class="stat-value">{{ todos().length }}</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">
+                @if (searchText()) {
+                Showing:
+                } @else {
+                Pending:
+                }
+            </span>
+            <span class="stat-value pending">
+                @if (searchText()) {
+                {{ filteredTodos().length }}
+                } @else {
+                {{ getPendingCount() }}
+                }
+            </span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Completed:</span>
+            <span class="stat-value completed">{{ getCompletedCount() }}</span>
+        </div>
+    </div>
+
+
+    <!-- ✨ Search section -->
+    @if (todos().length > 0) {
+    <div class="search-section">
+        <div class="search-input-group">
+            <span class="search-icon">🔍</span>
+            <input type="text" [(ngModel)]="searchText" placeholder="Search todos..." class="search-input" />
+            @if (searchText()) {
+            <button (click)="clearSearch()" class="clear-search-btn" title="Clear search">
+                ✕
+            </button>
+            }
+        </div>
+        @if (searchText()) {
+        <p class="search-results-info">
+            Found {{ filteredTodos().length }} of {{ todos().length }} todos
+        </p>
+        }
+    </div>
+    }
+
+    <!-- Sort buttons -->
+    @if (todos().length > 0) {
+    <div class="sort-section">
+        <label class="sort-label">Sort by:</label>
+        <div class="sort-buttons">
+            <button (click)="changeSortOption('date-newest')" class="sort-btn"
+                [class.active]="currentSortOption() === 'date-newest'" title="Newest First">
+                📅 Newest
+            </button>
+            <button (click)="changeSortOption('date-oldest')" class="sort-btn"
+                [class.active]="currentSortOption() === 'date-oldest'" title="Oldest First">
+                📅 Oldest
+            </button>
+            <button (click)="changeSortOption('title-asc')" class="sort-btn"
+                [class.active]="currentSortOption() === 'title-asc'" title="A to Z">
+                🔤 A-Z
+            </button>
+            <button (click)="changeSortOption('title-desc')" class="sort-btn"
+                [class.active]="currentSortOption() === 'title-desc'" title="Z to A">
+                🔤 Z-A
+            </button>
+            <button (click)="changeSortOption('status')" class="sort-btn"
+                [class.active]="currentSortOption() === 'status'" title="Status (Pending first)">
+                ✓ Status
+            </button>
+        </div>
+    </div>
+    }
+
+
+    <!-- Loading state -->
+    @if (isLoading() && todos().length === 0) {
+    <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading your TODO list...</p>
+    </div>
+    }
+
+    <!-- Empty state -->
+    @if (!isLoading() && todos().length === 0) {
+    <div class="empty-state">
+        <div class="empty-icon">📋</div>
+        <h3>No TODO items yet</h3>
+        <p>Add your first task above to get started!</p>
+    </div>
+    }
+
+    <!-- ✨ No search results state -->
+    @if (!isLoading() && todos().length > 0 && filteredTodos().length === 0) {
+    <div class="empty-state">
+        <div class="empty-icon">🔍</div>
+        <h3>No results found</h3>
+        <p>Try a different search term</p>
+        <button (click)="clearSearch()" class="clear-all-btn">Clear Search</button>
+    </div>
+    }
+
+    <!-- TODO list (using filteredTodos instead of todos) -->
+    @if (filteredTodos().length > 0) {
+    <ul class="todo-list">
+        @for (todo of filteredTodos(); track todo.id) {
+        <li class="todo-item" [class.completed]="todo.isCompleted">
+            <div class="todo-content">
+                <!-- Checkbox -->
+                <input type="checkbox" [checked]="todo.isCompleted" (change)="toggleComplete(todo)"
+                    class="todo-checkbox" id="todo-{{ todo.id }}" />
+
+                <!-- Title (view mode) -->
+                @if (!isEditing(todo.id)) {
+                <label [for]="'todo-' + todo.id" class="todo-title" (dblclick)="startEdit(todo)">
+                    {{ todo.title }}
+                </label>
+                }
+
+                <!-- Title (edit mode) -->
+                @if (isEditing(todo.id)) {
+                <input type="text" [(ngModel)]="editingTitle" (keyup.enter)="saveEdit(todo.id)"
+                    (keyup.escape)="cancelEdit()" class="edit-input" autofocus />
+                }
+            </div>
+
+            <!-- Actions -->
+            <div class="todo-actions">
+                @if (!isEditing(todo.id)) {
+                <button (click)="startEdit(todo)" class="action-btn edit-btn" title="Edit">
+                    ✏️
+                </button>
+                <button (click)="deleteTodo(todo.id)" class="action-btn delete-btn" title="Delete">
+                    🗑️
+                </button>
+                } @else {
+                <button (click)="saveEdit(todo.id)" class="action-btn save-btn" title="Save">
+                    ✓
+                </button>
+                <button (click)="cancelEdit()" class="action-btn cancel-btn" title="Cancel">
+                    ✕
+                </button>
+                }
+            </div>
+        </li>
+        }
+    </ul>
+    }
+
+    <!-- Refresh button -->
+    <div class="footer">
+        <button (click)="loadTodos()" class="refresh-btn" [disabled]="isLoading()">
+            🔄 Refresh
+        </button>
+    </div>
+</div>
