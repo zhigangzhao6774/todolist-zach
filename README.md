@@ -9,6 +9,8 @@ A full-stack TODO list application built with Angular 20 and .NET 8 Web API, dem
 - ✅ **Edit** TODO items (inline editing with double-click)
 - ✅ **Delete** TODO items with confirmation
 - ✅ **Toggle** completion status
+- ✅ **Search** TODO items by title with real-time filtering
+- ✅ **Sort** TODO items by date, title, or status
 - ✅ **Statistics** showing total, pending, and completed items
 - ✅ **Responsive** design for mobile and desktop
 - ✅ **Real-time** updates with Angular signals
@@ -82,11 +84,7 @@ todo-angular/src/app/
 - Uses **FluentAssertions** for readable assertions
 - **95%+ code coverage**
 
-**Frontend Tests (Jasmine/Karma)**:
-- Unit tests for `TodoService`
-- Component tests for `TodoListComponent`
-- HTTP mocking with `HttpTestingController`
-- **90%+ code coverage**
+
 
 ## 🚀 Getting Started
 
@@ -149,21 +147,6 @@ dotnet test
 
 # With coverage
 dotnet test /p:CollectCoverage=true
-```
-
-#### Frontend Tests
-
-```bash
-cd todo-angular
-
-# Run tests once
-npm test
-
-# Run tests in watch mode
-npm test -- --watch
-
-# Run tests with coverage
-npm test -- --code-coverage
 ```
 
 ## 🔧 Configuration
@@ -328,13 +311,25 @@ npm run build
 
 ## 📄 License
 
-This project is open source and available under the MIT License.
+This project is a personal portfolio piece created for educational and demonstration purposes. Feel free to use it as a reference for your own projects.
 
 ## 👤 Author
 
-Created as a demonstration of modern full-stack development with Angular and .NET.
+**Zach Zhao**
 
----
+Created as a demonstration of modern full-stack development with Angular 20 and .NET 8 for **Mid-Level Software Developer interview **.
+
+This project showcases:
+- ✅ Full-stack development expertise (Frontend + Backend)
+- ✅ Modern frameworks (Angular 20, .NET 8)
+- ✅ Clean Architecture and SOLID principles
+- ✅ RESTful API design
+- ✅ Reactive programming with RxJS and Signals
+- ✅ Comprehensive testing (Unit + Integration)
+- ✅ Professional UI/UX design
+- ✅ Real-world features (CRUD, Search, Sort, Validation)
+
+**GitHub**: [zhigangzhao6774](https://github.com/zhigangzhao6774)  
 
 **Happy Coding! 🚀**
 
