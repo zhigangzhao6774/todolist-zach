@@ -21,7 +21,6 @@ A full-stack TODO list application built with Angular 20 and .NET 8 Web API, dem
 
 ### 🚀 Future Enhancements
 
-#### Core Features
 - [ ] **Calendar View**
 - [ ] **User Authentication** 
 - [ ] **Pagination**
