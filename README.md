@@ -373,3 +373,23 @@ This project showcases:
 **Happy Coding! 🚀**
 
 
+![alt text](image-1.png)
+**Features shown:**
+- ✅ Clean, modern UI with gradient background
+- ✅ Real-time search functionality
+- ✅ Multiple sort options (Newest, Oldest, A-Z, Z-A, Status)
+- ✅ Statistics dashboard (Total, Pending, Completed)
+- ✅ Inline editing with double-click
+- ✅ Responsive design
+
+
+![alt text](image-2.png)
+**Key capabilities:**
+- 🔍 Real-time search with instant filtering
+- 📊 Live statistics tracking
+- ✏️ Inline editing mode
+- 🎨 Color-coded completion status
+- 📱 Mobile-responsive layout
+
+
+*Real-time search, sort options, and statistics dashboard*
