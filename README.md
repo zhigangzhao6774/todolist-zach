@@ -40,6 +40,15 @@ A full-stack TODO list application built with Angular 20 and .NET 8 Web API, dem
 - [ ] **Subtasks** 
 - [ ] **Dark Mode**
 
+#### 🤖 AI/LLM-Powered Features
+- [ ] **AI Task Suggestions**
+- [ ] **AI automatically assigns categories/tags** 
+- [ ] **Task Breakdown Assistant** 
+- [ ] **Time Estimation**
+- [ ] **AI warns about scheduling conflictovercommitment**
+- [ ] **Voice-to-TODO**
+- [ ] **Paste meeting notes, AI extracts actionable TODOs**
+- [ ] **Bottleneck Identification**
 
 
 ## 🏗️ Architecture
