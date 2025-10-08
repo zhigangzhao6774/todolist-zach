@@ -12,8 +12,8 @@ cd api
 dotnet run
 ```
 
-✅ The API will start at: **https://localhost:7039**  
-✅ Swagger UI available at: **https://localhost:7039**
+✅ The API will start at: **https://localhost:5162**  
+✅ Swagger UI available at: **https://localhost:5162**
 
 ## Step 2: Start the Frontend
 

@@ -70,10 +70,14 @@ todo-angular/src/app/
 **Key Design Decisions:**
 - **Standalone Components**: No NgModules, simpler and more maintainable
 - **Signals**: Reactive state management with Angular's new signal API
+- **Computed Signals**: Automatic filtering based on search input
+- **Client-Side Filtering**: Real-time search without server requests
+- **Client-Side Sorting**: Instant sort updates with multiple options
 - **HttpClient**: Built-in HTTP service for API communication
 - **Dependency Injection**: Modern `inject()` function for cleaner code
 - **Observables**: RxJS for asynchronous operations
 - **TypeScript**: Strong typing for better developer experience
+
 
 ### Testing
 
@@ -116,9 +120,9 @@ dotnet restore
 dotnet run
 ```
 
-The API will start at `https://localhost:7039` (or `http://localhost:5000`)
+The API will start at `https://localhost:5162` (or `http://localhost:5000`)
 
-**Swagger UI**: Navigate to `https://localhost:7039` to see the API documentation
+**Swagger UI**: Navigate to `https://localhost:5162` to see the API documentation
 
 #### 3. Frontend Setup
 
@@ -205,7 +209,7 @@ todolist/
 
 ## 🎯 API Endpoints
 
-Base URL: `https://localhost:7039/api/todo`
+Base URL: `https://localhost:5162/api/todo`
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|

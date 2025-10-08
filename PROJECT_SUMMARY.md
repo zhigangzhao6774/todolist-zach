@@ -113,7 +113,7 @@
 cd api
 dotnet run
 ```
-Access at: https://localhost:7039
+Access at: https://localhost:5162
 
 ### Terminal 2 - Frontend
 ```powershell

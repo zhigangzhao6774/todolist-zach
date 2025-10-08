@@ -1,4 +1,4 @@
-@api_HostAddress = https://localhost:7039
+@api_HostAddress = https://localhost:5162
 @api_BaseUrl = {{api_HostAddress}}/api/todo
 
 ### Get all TODO items
