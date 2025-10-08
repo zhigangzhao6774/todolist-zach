@@ -1,6 +1,7 @@
 # TODO List Application
 
 A full-stack TODO list application built with Angular 20 and .NET 8 Web API, demonstrating modern web development best practices.
+![alt text](image-3.png)
 
 ## 📋 Features
 
