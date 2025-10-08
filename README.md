@@ -4,6 +4,8 @@ A full-stack TODO list application built with Angular 20 and .NET 8 Web API, dem
 
 ## 📋 Features
 
+### ✅ Current Features
+
 - ✅ **View** all TODO items
 - ✅ **Add** new TODO items
 - ✅ **Edit** TODO items (inline editing with double-click)
@@ -15,6 +17,31 @@ A full-stack TODO list application built with Angular 20 and .NET 8 Web API, dem
 - ✅ **Responsive** design for mobile and desktop
 - ✅ **Real-time** updates with Angular signals
 - ✅ **Error handling** with user-friendly messages
+
+
+### 🚀 Future Enhancements
+
+#### Core Features
+- [ ] **Calendar View**
+- [ ] **User Authentication** 
+- [ ] **Pagination**
+- [ ] **Date & Time Tracking** 
+- [ ] **Timesheet Integration** 
+- [ ] **Drag-and-Drop Ordering** 
+- [ ] **Priority Levels** 
+- [ ] **Categories & Tags** 
+- [ ] **Auditing & History** 
+- [ ] **Email Notifications** 
+- [ ] **Bulk Operations** 
+- [ ] **Attachments**
+- [ ] **Comments & Notes** 
+- [ ] **Soft Delete & Restore** 
+- [ ] **Reminders** 
+- [ ] **Recurring Tasks** 
+- [ ] **Subtasks** 
+- [ ] **Dark Mode**
+
+
 
 ## 🏗️ Architecture
 
